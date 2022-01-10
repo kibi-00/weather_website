@@ -1,0 +1,89 @@
+body {
+  margin: 40px auto;
+  padding: 25px;
+  border: 2px solid #1a1831;
+  border-radius: 10px;
+  max-width: 700px;
+}
+body::after {
+  content: "";
+  background-image: url(../images/weather-image.jpg);
+  background-size: cover;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+h1 {
+  text-align: center;
+  color: #1a1831;
+  font-size: 40px;
+  line-height: 45px;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bolder;
+}
+h2 {
+  color: #20615b;
+  font-size: 18px;
+  line-height: 25px;
+}
+a {
+  text-decoration: none;
+}
+.your-location {
+  font-size: 10px;
+  font-weight: 600;
+}
+.today-icon {
+  text-align: center;
+  font-size: 45px;
+  color: #1a1831;
+}
+.now-temp {
+  font-size: 40px;
+  color: #a21232;
+  text-align: center;
+  font-weight: bold;
+}
+
+.f-temp {
+  font-size: 18px;
+  color: #1a1831;
+  text-align: left;
+}
+.c-temp {
+  font-size: 25px;
+  color: #a21232;
+  text-align: left;
+}
+
+.selected-unit {
+  font-size: 25px;
+  color: #a21232;
+}
+
+.today-details {
+  font-size: 12px;
+}
+
+.week-days {
+  font-family: "Lobster", cursive;
+  color: #1a1831;
+  text-align: center;
+}
+.week-temp {
+  font-size: 14px;
+  color: #a21232;
+  text-align: center;
+}
+.week-max {
+  font-weight: bold;
+}
+.week-icon {
+  color: #20615b;
+  text-align: center;
+}
