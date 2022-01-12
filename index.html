@@ -25,95 +25,101 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container surround">
-      <div class="row">
-        <div class="col-10">
-          <h1 id="result-city"></h1>
-        </div>
-        <div class="col-2">
-          <button class="btn btn-secondary your-location">Your Location</button>
-        </div>
-      </div>
-      <br />
-
-      <h2 class="today-day">Friday</h2>
-      <br />
-      <div class="row">
-        <div class="col-4 today-icon">
-          <img src="" alt="" id="icon" />
-        </div>
-        <div class="col-4 now-temp">22</div>
-        <div class="col-4">
-          <h5>
-            <a href="#" class="c-temp">°C</a> |
-            <a href="#" class="f-temp">°F</a>
-          </h5>
-          <p class="today-details">
-            Humidity: <span class="today-humidity">80</span>% <br />
-            Wind: <span class="today-wind">13</span> km/h
-          </p>
-        </div>
-      </div>
-      <br />
-      <hr />
-
-      <h2>Forecast</h2>
-      <div class="row">
-        <div class="col week-days">Saturday</div>
-        <div class="col week-days">Sunday</div>
-        <div class="col week-days">Monday</div>
-        <div class="col week-days">Tuesday</div>
-        <div class="col week-days">Wednesday</div>
-      </div>
-      <div class="row">
-        <div class="col week-temp">
-          <span class="week-max"> 23°</span> | <span> 14°</span>
-        </div>
-        <div class="col week-temp">
-          <span class="week-max"> 27°</span> | <span> 12°</span>
-        </div>
-        <div class="col week-temp">
-          <span class="week-max"> 33°</span> | <span> 14°</span>
-        </div>
-        <div class="col week-temp">
-          <span class="week-max"> 32°</span> | <span> 18°</span>
-        </div>
-        <div class="col week-temp">
-          <span class="week-max"> 33°</span> | <span> 17°</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col week-icon"><i class="fas fa-cloud"></i></div>
-        <div class="col week-icon"><i class="fas fa-sun"></i></div>
-        <div class="col week-icon"><i class="fas fa-sun"></i></div>
-        <div class="col week-icon"><i class="fas fa-cloud-sun"></i></div>
-        <div class="col week-icon"><i class="fas fa-sun"></i></div>
-      </div>
-      <br />
-      <form id="search-form">
+    <div class="container">
+      <div class="surround">
         <div class="row">
-          <div class="col-9">
-            <input
-              type="search"
-              name=""
-              class="form-control mb-3 input-space"
-              placeholder="Enter city name"
-              id="chosen-city"
-            />
+          <div class="col-10">
+            <h1 id="result-city"></h1>
           </div>
-          <div class="col-3">
-            <input type="submit" value="Search" class="btn btn-dark" />
+          <div class="col-2">
+            <button class="btn btn-secondary your-location">
+              Your Location
+            </button>
           </div>
         </div>
-      </form>
+        <br />
+
+        <h2 class="today-day"></h2>
+        <h3 class="weather-description"></h3>
+        <br />
+        <div class="row">
+          <div class="col-4 today-icon">
+            <img src="" alt="" id="icon" />
+          </div>
+          <div class="col-4 now-temp">22</div>
+          <div class="col-4">
+            <h5>
+              <a href="#" class="c-temp">°C</a> |
+              <a href="#" class="f-temp">°F</a>
+            </h5>
+            <p class="today-details">
+              Humidity: <span class="today-humidity">80</span>% <br />
+              Wind: <span class="today-wind">13</span> km/h
+            </p>
+          </div>
+        </div>
+        <br />
+        <hr />
+
+        <h2>Forecast</h2>
+        <div class="row">
+          <div class="col week-days">Saturday</div>
+          <div class="col week-days">Sunday</div>
+          <div class="col week-days">Monday</div>
+          <div class="col week-days">Tuesday</div>
+          <div class="col week-days">Wednesday</div>
+        </div>
+        <div class="row">
+          <div class="col week-temp">
+            <span class="week-max"> 23°</span> | <span> 14°</span>
+          </div>
+          <div class="col week-temp">
+            <span class="week-max"> 27°</span> | <span> 12°</span>
+          </div>
+          <div class="col week-temp">
+            <span class="week-max"> 33°</span> | <span> 14°</span>
+          </div>
+          <div class="col week-temp">
+            <span class="week-max"> 32°</span> | <span> 18°</span>
+          </div>
+          <div class="col week-temp">
+            <span class="week-max"> 33°</span> | <span> 17°</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col week-icon"><i class="fas fa-cloud"></i></div>
+          <div class="col week-icon"><i class="fas fa-sun"></i></div>
+          <div class="col week-icon"><i class="fas fa-sun"></i></div>
+          <div class="col week-icon"><i class="fas fa-cloud-sun"></i></div>
+          <div class="col week-icon"><i class="fas fa-sun"></i></div>
+        </div>
+        <br />
+        <form id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                name=""
+                class="form-control mb-3 input-space"
+                placeholder="Enter city name"
+                id="chosen-city"
+              />
+            </div>
+            <div class="col-3">
+              <input type="submit" value="Search" class="btn btn-dark" />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <p class="footer">
+        This code is
+        <a href="https://github.com/kibi-00/weather_website" target="_blank"
+          >open-source</a
+        >
+        on GitHub
+      </p>
     </div>
-    <p class="footer">
-      This code is open-sourced on
-      <a href="https://github.com/kibi-00/weather_website" target="_blank"
-        >GitHub</a
-      >
-      and hosted on Netlify
-    </p>
     <script src="src/index.js"></script>
   </body>
 </html>

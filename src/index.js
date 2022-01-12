@@ -23,11 +23,13 @@ let farenheit = document.querySelector(".f-temp");
 let newCity = document.querySelector("#result-city");
 let newHumidity = document.querySelector(".today-humidity");
 let newWind = document.querySelector(".today-wind");
+let weatherDescription = document.querySelector(".weather-description");
 let apiKey = `1d9f5e22b7d5d2800eb8802fb2e8da88`;
 
 function displayWeatherDetails(response) {
   let newTempDisplay = Math.round(response.data.main.temp);
   let iconElement = document.querySelector("#icon");
+  weatherDescription.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -65,10 +67,6 @@ function handleSubmit(event) {
   let chosenCity = document.querySelector("#chosen-city").value;
   newCityDetails(chosenCity);
 }
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
-newCityDetails("Sydney");
 
 function yourCityNow(Location) {
   let yourCurrentLocation = Location.data[0].name;
@@ -85,5 +83,11 @@ function showYourLocation(location) {
   }
   navigator.geolocation.getCurrentPosition(getLocation);
 }
+
 let yourLocation = document.querySelector(".your-location");
 yourLocation.addEventListener("click", showYourLocation);
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+newCityDetails("Sydney");
