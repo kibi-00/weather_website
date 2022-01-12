@@ -27,6 +27,12 @@ let apiKey = `1d9f5e22b7d5d2800eb8802fb2e8da88`;
 
 function displayWeatherDetails(response) {
   let newTempDisplay = Math.round(response.data.main.temp);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   currentTemp.innerHTML = newTempDisplay;
   newHumidity.innerHTML = response.data.main.humidity;
   newWind.innerHTML = response.data.wind.speed;
