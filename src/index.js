@@ -91,7 +91,7 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 newCityDetails("Sydney");
-/*forecastSection();
+forecastSection();
 
 function forecastSection(day) {
   let forecast = document.querySelector(".forecast");
@@ -103,4 +103,4 @@ function forecastSection(day) {
             </div>
             <div class="week-icon"><i class="fas fa-cloud"></i></div>
           </div>`;
-}*/
+}
