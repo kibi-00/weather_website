@@ -95,12 +95,22 @@ forecastSection();
 
 function forecastSection(day) {
   let forecast = document.querySelector(".forecast");
-  forecast.innerHTML = `<div class="col-2 forecast">
-            <div class="week-days">Sat</div>
-            <div class="week-temp">
-              <span class="week-max"> 23°</span> |
-              <span class="week-min"> 14°</span>
-            </div>
-            <div class="week-icon"><i class="fas fa-cloud"></i></div>
-          </div>`;
+  let forecastInfo = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
+  days.forEach(function (day) {
+    forecastInfo =
+      forecastInfo +
+      `<div class= "col-2">
+      <div class="week-days">${day}</div>
+              <div class="week-temp">
+                <span class="week-max"> 23°</span> |
+                <span class="week-min"> 14°</span>
+              </div>
+              <div class="week-icon"><i class="fas fa-cloud"></i></div>
+              </div>`;
+  });
+
+  forecastInfo = forecastInfo + `</div>`;
+
+  forecast.innerHTML = forecastInfo;
 }
