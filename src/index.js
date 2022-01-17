@@ -114,10 +114,10 @@ function forecastSection(response) {
 
   forecastDays.forEach(function (day, index) {
     console.log(day);
-    if (index < 6) {
+    if (index < 5) {
       forecastInfo =
         forecastInfo +
-        `<div class= "col-2">
+        `<div class= "col">
       <div class="week-days">${formatDate(day.dt)}</div>
               <div class="week-temp">
                 <span class="week-max"> ${Math.round(day.temp.max)}°</span> |
