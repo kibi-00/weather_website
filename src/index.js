@@ -125,7 +125,7 @@ function forecastSection(response) {
               </div>
               <div class="week-icon"><img src="http://openweathermap.org/img/wn/${
                 day.weather[0].icon
-              }@2x.png" width=60 /></div>
+              }@2x.png" width=50 /></div>
               </div>`;
     }
   });

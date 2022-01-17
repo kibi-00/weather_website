@@ -1,6 +1,6 @@
 body {
   margin: 15px auto;
-  padding: 15px;
+  padding: 10px;
   max-width: 700px;
 }
 body::after {
@@ -50,7 +50,7 @@ a {
 }
 .today-icon {
   text-align: center;
-  font-size: 45px;
+  font-size: 50px;
   color: #1a1831;
 }
 .now-temp {
@@ -85,9 +85,10 @@ a {
   font-family: "Lobster", cursive;
   color: #1a1831;
   text-align: center;
+  padding-bottom: 10px;
 }
 .week-temp {
-  font-size: 14px;
+  font-size: 12px;
   color: #a21232;
   text-align: center;
 }
@@ -95,7 +96,6 @@ a {
   font-weight: bold;
 }
 .week-icon {
-  color: #20615b;
   text-align: center;
 }
 
