@@ -110,7 +110,7 @@ function formatDate(timestamp) {
 function forecastSection(response) {
   let forecastDays = response.data.daily;
   let forecast = document.querySelector(".forecast");
-  let forecastInfo = `<div class="row">`;
+  let forecastInfo = `<div class="row g-2">`;
 
   forecastDays.forEach(function (day, index) {
     console.log(day);
