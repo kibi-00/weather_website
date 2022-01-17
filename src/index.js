@@ -26,6 +26,13 @@ let newWind = document.querySelector(".today-wind");
 let weatherDescription = document.querySelector(".weather-description");
 let apiKey = `1d9f5e22b7d5d2800eb8802fb2e8da88`;
 
+function obtainLocationForecast(info) {
+  let locationLat = info.data.coord.lat;
+  let locationLong = info.data.coord.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${locationLat}&lon=${locationLong}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(forecastSection);
+}
+
 function displayWeatherDetails(response) {
   let newTempDisplay = Math.round(response.data.main.temp);
   let iconElement = document.querySelector("#icon");
@@ -55,6 +62,7 @@ function displayWeatherDetails(response) {
     event.target.innerHTML = `<span class="selected-unit"> °C</span>`;
     farenheit.innerHTML = `<span class="f-temp">°F</span>`;
   }
+  obtainLocationForecast(response);
 }
 
 function newCityDetails(city) {
@@ -74,6 +82,7 @@ function yourCityNow(Location) {
 }
 
 function showYourLocation(location) {
+  location.preventDefault();
   function getLocation(result) {
     let lat = result.coords.latitude;
     let long = result.coords.longitude;
@@ -91,20 +100,26 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 newCityDetails("Sydney");
-forecastSection();
 
-function forecastSection(day) {
+function formatDate(timestamp) {
+  let forecastDate = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[forecastDate.getDay()];
+}
+
+function forecastSection(response) {
+  let forecastDays = response.data.daily;
   let forecast = document.querySelector(".forecast");
   let forecastInfo = `<div class="row">`;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
-  days.forEach(function (day) {
+
+  forecastDays.forEach(function (day) {
     forecastInfo =
       forecastInfo +
       `<div class= "col-2">
-      <div class="week-days">${day}</div>
+      <div class="week-days">${formatDate(day.dt)}</div>
               <div class="week-temp">
-                <span class="week-max"> 23°</span> |
-                <span class="week-min"> 14°</span>
+                <span class="week-max"> ${Math.round(day.temp.max)}°</span> |
+                <span class="week-min"> ${Math.round(day.temp.min)}°</span>
               </div>
               <div class="week-icon"><i class="fas fa-cloud"></i></div>
               </div>`;
