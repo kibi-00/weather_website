@@ -99,7 +99,7 @@ yourLocation.addEventListener("click", showYourLocation);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-newCityDetails("Sydney");
+newCityDetails("Malaga");
 
 function formatDate(timestamp) {
   let forecastDate = new Date(timestamp * 1000);
@@ -113,6 +113,7 @@ function forecastSection(response) {
   let forecastInfo = `<div class="row">`;
 
   forecastDays.forEach(function (day, index) {
+    console.log(day);
     if (index < 6) {
       forecastInfo =
         forecastInfo +
@@ -122,7 +123,9 @@ function forecastSection(response) {
                 <span class="week-max"> ${Math.round(day.temp.max)}°</span> |
                 <span class="week-min"> ${Math.round(day.temp.min)}°</span>
               </div>
-              <div class="week-icon"><i class="fas fa-cloud"></i></div>
+              <div class="week-icon"><img src="http://openweathermap.org/img/wn/${
+                day.weather[0].icon
+              }@2x.png" width=60 /></div>
               </div>`;
     }
   });
